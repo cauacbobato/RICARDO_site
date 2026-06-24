@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Artigo | Ricardo Wiltgen - Podologia</title>
+    <link rel="stylesheet" href="css/estilo.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+</head>
+<body>
+
+    <!-- ===== HERO INTERNO ===== -->
+    <section class="hero" style="padding: 40px 0 60px;">
+        <div class="container hero-container" style="grid-template-columns:1fr; text-align:center;">
+            <div class="hero-conteudo">
+                <span class="hero-badge" id="artigo-categoria">Artigo</span>
+                <h1 id="artigo-titulo" style="font-size:2.2rem;">Carregando...</h1>
+                <p id="artigo-data" style="color:var(--cor-texto-claro);"></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== CONTEÚDO DO ARTIGO ===== -->
+    <section style="padding: 40px 0 80px; background: var(--cor-branco);">
+        <div class="container">
+            <div style="max-width: 800px; margin: 0 auto;">
+                <div id="artigo-conteudo" style="font-size:1.1rem; line-height:1.8; color:var(--cor-texto);">
+                    Carregando artigo...
+                </div>
+                <div style="margin-top: 40px; padding-top: 30px; border-top: 1px solid var(--cor-bege); text-align:center;">
+                    <a href="blog.html" class="btn-secundario">← Voltar para o blog</a>
+                    <a href="https://api.whatsapp.com/send?phone=5554999676597&text=" target="_blank" class="btn-primario" style="margin-left:12px;">
+                        Agendar avaliação
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== CTA ===== -->
+    <section class="cta-final">
+        <div class="container cta-container">
+            <div class="cta-conteudo">
+                <h2>Gostou do conteúdo? <span>Agende sua avaliação</span></h2>
+                <p>Cuide da saúde dos seus pés com quem tem mais de 20 anos de experiência.</p>
+                <a href="https://api.whatsapp.com/send?phone=5554999676597&text=" target="_blank" class="btn-primario">
+                    Agendar avaliação pelo WhatsApp
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // ===== CARREGA O ARTIGO ESPECÍFICO =====
+        document.addEventListener('DOMContentLoaded', function() {
+            // Pega o ID da URL (ex: ?id=1)
+            const urlParams = new URLSearchParams(window.location.search);
+            const artigoId = urlParams.get('id');
+
+            if (!artigoId) {
+                document.getElementById('artigo-titulo').textContent = 'Artigo não encontrado';
+                document.getElementById('artigo-conteudo').innerHTML = '<p>Artigo não encontrado. <a href="blog.html">Voltar para o blog</a></p>';
+                return;
+            }
+
+            fetch('artigos.json')
+                .then(response => response.json())
+                .then(artigos => {
+                    const artigo = artigos.find(a => a.id == artigoId);
+
+                    if (!artigo) {
+                        document.getElementById('artigo-titulo').textContent = 'Artigo não encontrado';
+                        document.getElementById('artigo-conteudo').innerHTML = '<p>Artigo não encontrado. <a href="blog.html">Voltar para o blog</a></p>';
+                        return;
+                    }
+
+                    // Preenche a página com os dados do artigo
+                    document.getElementById('artigo-categoria').textContent = artigo.categoria;
+                    document.getElementById('artigo-titulo').textContent = artigo.titulo;
+                    document.getElementById('artigo-data').textContent = `Publicado em ${artigo.data}`;
+                    document.getElementById('artigo-conteudo').innerHTML = artigo.conteudo;
+                    document.title = `${artigo.titulo} | Ricardo Wiltgen - Podologia`;
+                })
+                .catch(error => {
+                    console.error('Erro ao carregar artigo:', error);
+                    document.getElementById('artigo-conteudo').innerHTML = `
+                        <p style="color:var(--cor-texto-claro);">Erro ao carregar o artigo. Tente novamente mais tarde.</p>
+                    `;
+                });
+        });
+    </script>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

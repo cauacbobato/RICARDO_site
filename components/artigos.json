@@ -1,0 +1,47 @@
+[
+    {
+        "id": 1,
+        "titulo": "Unha encravada: quando procurar um podólogo especializado?",
+        "categoria": "Unha Encravada",
+        "resumo": "Entenda os sinais de alerta que indicam a necessidade de um tratamento especializado para unha encravada, evitando complicações e recorrências.",
+        "conteudo": "<p>A unha encravada é uma condição que pode causar dor, inflamação e desconforto significativo. Muitas vezes, ela retorna mesmo após tentativas de tratamento, gerando frustração e limitações no dia a dia.</p><p>Os principais sinais de alerta incluem: dor persistente na lateral da unha, vermelhidão, inchaço e, em casos mais avançados, presença de secreção ou tecido de granulação.</p><p>O tratamento precoce é fundamental para evitar que o quadro se agrave. Com uma avaliação especializada, é possível identificar a causa raiz — seja o formato da unha, o corte inadequado, o uso de calçados apertados ou alterações anatômicas — e definir a melhor estratégia de tratamento.</p><p><strong>Não ignore os sinais.</strong> Quanto mais cedo você procurar ajuda, maiores são as chances de resolver o problema de forma simples e eficaz.</p>",
+        "data": "10 de junho de 2026",
+        "slug": "unha-encravada-quando-procurar-podologo"
+    },
+    {
+        "id": 2,
+        "titulo": "Podologia Avançada: o que é e quando ela é indicada?",
+        "categoria": "Podologia",
+        "resumo": "Entenda como a abordagem avançada em podologia pode ajudar em casos que não tiveram solução com tratamentos convencionais.",
+        "conteudo": "<p>A Podologia Avançada é uma área especializada voltada para a avaliação, prevenção, correção e tratamento de alterações que afetam os pés e as unhas. Diferentemente de um cuidado apenas estético, envolve conhecimento técnico aprofundado, experiência clínica e abordagem individualizada.</p><p>Ela é indicada especialmente para pacientes que já passaram por outros tratamentos sem sucesso, que convivem com desconfortos recorrentes ou que apresentam condições que exigem maior expertise profissional.</p><p>Entre as situações mais comuns estão: unhas encravadas recorrentes, alterações ungueais persistentes, pé diabético, calosidades que retornam com frequência e casos que exigem correção com órteses ou próteses.</p><p><strong>A Podologia Avançada vai além do sintoma:</strong> busca compreender a origem do problema para oferecer soluções duradouras e personalizadas.</p>",
+        "data": "5 de junho de 2026",
+        "slug": "podologia-avancada-o-que-e"
+    },
+    {
+        "id": 3,
+        "titulo": "Correção de unhas: por que alguns casos continuam voltando?",
+        "categoria": "Correção Ungueal",
+        "resumo": "Descubra os fatores que podem estar causando recorrências no problema das unhas e como evitar que ele retorne.",
+        "conteudo": "<p>Muitos pacientes chegam ao consultório com a mesma queixa: a unha encravada ou deformada voltou, mesmo após ter sido tratada. A recorrência costuma estar relacionada a fatores que não foram corretamente identificados no tratamento anterior.</p><p>Entre os principais fatores que favorecem a recorrência estão: o formato natural da unha (mais curva ou mais larga), o corte inadequado, o uso de calçados que comprimem os dedos, alterações na pisada e até questões genéticas.</p><p>Para evitar que o problema retorne, é essencial uma avaliação que identifique a causa raiz. Técnicas como a correção ungueal com órteses podem auxiliar no crescimento adequado da unha, reduzindo desconfortos e prevenindo novas recorrências.</p><p><strong>A correção da unha não é um fim em si mesma:</strong> ela deve ser acompanhada de orientações sobre cuidados diários e, quando necessário, ajustes nos calçados e na forma de cortar as unhas.</p>",
+        "data": "28 de maio de 2026",
+        "slug": "correcao-de-unhas-recorencia"
+    },
+    {
+        "id": 4,
+        "titulo": "Pé diabético: por que a prevenção é tão importante?",
+        "categoria": "Pé Diabético",
+        "resumo": "Pessoas com diabetes precisam de cuidados especiais com os pés. Entenda os riscos e como prevenir complicações.",
+        "conteudo": "<p>Pessoas com diabetes possuem maior risco de desenvolver alterações nos pés devido às mudanças na circulação sanguínea e na sensibilidade (neuropatia). Pequenos ferimentos, calos ou bolhas podem evoluir para complicações graves se não forem tratados adequadamente.</p><p>A prevenção é a ferramenta mais poderosa para evitar complicações. Isso inclui: inspeção diária dos pés, higiene adequada, uso de calçados confortáveis e, principalmente, acompanhamento profissional regular.</p><p>O podólogo especializado em pé diabético realiza avaliações periódicas para identificar precocemente quaisquer sinais de risco, orienta sobre os cuidados diários e ajuda a preservar a saúde dos pés, reduzindo drasticamente as chances de complicações.</p><p><strong>Lembre-se:</strong> um pequeno ferimento em um pé com diabetes pode ter consequências sérias. A prevenção salva vidas.</p>",
+        "data": "20 de maio de 2026",
+        "slug": "pe-diabetico-prevencao"
+    },
+    {
+        "id": 5,
+        "titulo": "Dor nos pés: 7 sinais que não devem ser ignorados",
+        "categoria": "Saúde dos Pés",
+        "resumo": "Fique atento aos sintomas que podem indicar problemas mais sérios e saiba quando buscar ajuda especializada.",
+        "conteudo": "<p>A dor nos pés é um sintoma que muitas pessoas ignoram, atribuindo ao cansaço ou ao uso de calçados inadequados. No entanto, alguns sinais merecem atenção especial e não devem ser menosprezados.</p><p><strong>Os 7 sinais de alerta:</strong></p><ul><li>Dor persistente que não melhora com repouso</li><li>Inchaço ou vermelhidão localizada</li><li>Alterações na cor da pele ou das unhas</li><li>Sensação de formigamento ou dormência</li><li>Feridas que demoram a cicatrizar</li><li>Calosidades que retornam com frequência</li><li>Dificuldade para caminhar ou mudança na pisada</li></ul><p>Se você apresenta um ou mais desses sinais, uma avaliação especializada é fundamental para identificar a causa e definir o tratamento mais adequado.</p><p><strong>Seus pés merecem cuidado.</strong> Não ignore os sinais que seu corpo está dando.</p>",
+        "data": "15 de maio de 2026",
+        "slug": "dor-nos-pes-7-sinais"
+    }
+]

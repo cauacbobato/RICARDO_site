@@ -4,15 +4,16 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Ricardo Wiltgen | Podologia Avançada</title>
-    <link rel="stylesheet" href="assets/css/estilo.css" />
+    <link rel="icon" type="image/x-icon" href="assets/imagens/favicon.ico" />
+    <link rel="stylesheet" href="/assets/css/estilo.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet" />
     <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
 </head>
 <body>
 
-    <!-- HEADER e FOOTER carregados via JS (components/) -->
-    
+    <!-- ===== HEADER (carregado via JS) ===== -->
+
     <!-- ===== HERO ===== -->
     <section class="hero">
         <div class="container hero-container">
@@ -40,44 +41,18 @@
                     <a href="https://api.whatsapp.com/send?phone=5554999676597&text=" target="_blank" class="btn-primario">
                         Agendar avaliação pelo WhatsApp
                     </a>
-                    <a href="#sobre" class="btn-secundario">Conheça mais</a>
+                    <a href="/pages/sobre.html" class="btn-secundario">Conheça Ricardo</a>
                 </div>
             </div>
             <div class="hero-imagem">
-                <img src="assets/imagens/hero-placeholder.jpg" alt="Ricardo Wiltgen - Podólogo" />
-            </div>
-        </div>
-    </section>
-
-    <!-- ===== SOBRE ===== -->
-    <section class="sobre-destaque" id="sobre">
-        <div class="container sobre-container">
-            <div class="sobre-imagem">
-                <img src="assets/imagens/sobre-placeholder.jpg" alt="Ricardo Wiltgen" />
-            </div>
-            <div class="sobre-conteudo">
-                <span class="section-tag">Sobre Ricardo</span>
-                <h2>Ricardo Wiltgen</h2>
-                <h3>Podologia Avançada · Mais de 20 anos de experiência</h3>
-                <p>
-                    Ao longo desses anos, construiu uma carreira baseada em aperfeiçoamento contínuo, experiência clínica e atendimento individualizado, tornando-se referência para pacientes que buscam um cuidado especializado, seguro e resolutivo.
-                </p>
-                <p>
-                    Seu trabalho vai além da realização de procedimentos. Cada atendimento é conduzido com atenção aos detalhes, avaliação criteriosa e foco na identificação da causa dos problemas, oferecendo soluções personalizadas para preservar a saúde e a funcionalidade dos pés.
-                </p>
-                <ul class="sobre-lista">
-                    <li>✓ Mais de 20 anos de experiência em podologia</li>
-                    <li>✓ Formado pela Universidade de Caxias do Sul (UCS)</li>
-                    <li>✓ Atendimento individualizado e humanizado</li>
-                    <li>✓ Especialista em casos de maior complexidade</li>
-                </ul>
-                <a href="pages/sobre.html" class="btn-primario">Conheça mais sobre Ricardo</a>
+                <img src="/assets/imagens/hero-placeholder.jpg" alt="Ricardo Wiltgen - Podólogo" />
             </div>
         </div>
     </section>
 
     <!-- ===== PODOLOGIA AVANÇADA ===== -->
-    <section class="podologia-avancada">
+
+    <section class="podologia-avancada" style="background: var(--cor-branco);">
         <div class="container">
             <div class="section-header">
                 <span class="section-tag">Especialidade</span>
@@ -87,86 +62,31 @@
             <div class="podologia-grid">
                 <div class="podologia-texto">
                     <p>
-                        Diferente de um cuidado exclusivamente estético, a Podologia Avançada envolve conhecimento técnico aprofundado, análise clínica e utilização de técnicas específicas para tratar condições que exigem maior experiência profissional.
+                        Diferente de um cuidado exclusivamente estético, a Podologia Avançada envolve conhecimento técnico aprofundado e técnicas específicas para tratar condições que exigem maior experiência profissional.
                     </p>
-                    <p>
-                        Muitos pacientes procuram atendimento após conviverem durante meses ou anos com desconfortos recorrentes, alterações ungueais ou situações que não obtiveram resolução satisfatória anteriormente. Nesses casos, um olhar especializado faz toda a diferença.
-                    </p>
-                    <h4>Mais do que tratar sintomas: compreender a causa</h4>
-                    <p>
-                        Os pés são a base do corpo e desempenham um papel fundamental na mobilidade, equilíbrio e qualidade de vida. Pequenas alterações podem gerar desconfortos progressivos, modificar a forma de caminhar e impactar a rotina diária.
-                    </p>
-                    <p>
-                        Cada avaliação busca compreender: a origem da queixa, os fatores que contribuem para sua manutenção, possíveis alterações estruturais, riscos de recorrência e estratégias para prevenção e acompanhamento.
-                    </p>
+                    <a href="/pages/podologia.html" class="btn-primario" style="margin-top:12px;">Entenda mais sobre Podologia Avançada</a>
                 </div>
                 <div class="podologia-imagem">
-                    <img src="assets/imagens/podologia-placeholder.jpg" alt="Podologia Avançada" />
+                    <img src="/assets/imagens/podologia-placeholder.jpg" alt="Podologia Avançada" />
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- ===== ÁREAS DE ATUAÇÃO ===== -->
-    <section class="areas-atuacao">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-tag">Atuação</span>
-                <h2>Áreas de <span>Atuação</span></h2>
-                <p>Tratamentos especializados para diferentes necessidades</p>
-            </div>
-            <div class="areas-grid">
-                <div class="area-card">
-                    <div class="area-icon"><i data-feather="footprints"></i></div>
-                    <h3>Unhas Encravadas</h3>
-                    <p>Avaliação e tratamento especializado de quadros agudos e recorrentes.</p>
-                </div>
-                <div class="area-card">
-                    <div class="area-icon"><i data-feather="ruler"></i></div>
-                    <h3>Correções Ungueais</h3>
-                    <p>Técnicas específicas para auxiliar na correção do crescimento inadequado das unhas.</p>
-                </div>
-                <div class="area-card">
-                    <div class="area-icon"><i data-feather="edit-3"></i></div>
-                    <h3>Próteses Ungueais / Órteses</h3>
-                    <p>Reconstrução estética e funcional em casos selecionados.</p>
-                </div>
-                <div class="area-card">
-                    <div class="area-icon"><i data-feather="droplet"></i></div>
-                    <h3>Pé Diabético</h3>
-                    <p>Acompanhamento preventivo e cuidados especializados para redução de riscos.</p>
-                </div>
-                <div class="area-card">
-                    <div class="area-icon"><i data-feather="search"></i></div>
-                    <h3>Alterações Ungueais</h3>
-                    <p>Avaliação e manejo de diferentes alterações que comprometem a saúde e a aparência das unhas.</p>
-                </div>
-                <div class="area-card">
-                    <div class="area-icon"><i data-feather="zap"></i></div>
-                    <h3>Calosidades e Hiperqueratoses</h3>
-                    <p>Tratamento focado na redução de desconfortos e prevenção de complicações.</p>
-                </div>
-                <div class="area-card area-destaque">
-                    <div class="area-icon"><i data-feather="star"></i></div>
-                    <h3>Casos Complexos</h3>
-                    <p>Situações que exigem avaliação aprofundada, experiência clínica e acompanhamento especializado.</p>
-                </div>
-            </div>
-        </div>
-    </section>
 
-    <!-- ===== DIFERENCIAIS ===== -->
+    <!-- ===== DIFERENCIAIS (agora depois do sobre) ===== -->
     <section class="diferenciais">
         <div class="container">
             <div class="section-header">
                 <span class="section-tag">Diferenciais</span>
                 <h2>Por que escolher o <span>Ricardo Wiltgen</span></h2>
+                <p>Excelência técnica e cuidado personalizado em cada atendimento</p>
             </div>
             <div class="diferenciais-grid">
                 <div class="diferencial-item">
                     <div class="diferencial-icon"><i data-feather="award"></i></div>
                     <h3>Mais de 20 anos de experiência</h3>
-                    <p>A experiência permite identificar detalhes que muitas vezes passam despercebidos e definir condutas mais adequadas.</p>
+                    <p>Trajetória sólida construída com dedicação e aperfeiçoamento contínuo.</p>
                 </div>
                 <div class="diferencial-item">
                     <div class="diferencial-icon"><i data-feather="user"></i></div>
@@ -176,85 +96,147 @@
                 <div class="diferencial-item">
                     <div class="diferencial-icon"><i data-feather="book-open"></i></div>
                     <h3>Formação e Aperfeiçoamento Contínuo</h3>
-                    <p>A busca constante por atualização técnica faz parte da filosofia de trabalho do Ricardo.</p>
+                    <p>A busca constante por atualização técnica faz parte da filosofia de trabalho.</p>
                 </div>
                 <div class="diferencial-item">
                     <div class="diferencial-icon"><i data-feather="tool"></i></div>
                     <h3>Casos de Maior Complexidade</h3>
-                    <p>Muitos pacientes procuram atendimento após tentativas anteriores sem resultado satisfatório.</p>
+                    <p>Muitos pacientes procuram atendimento após tentativas anteriores sem sucesso.</p>
                 </div>
                 <div class="diferencial-item">
                     <div class="diferencial-icon"><i data-feather="shield"></i></div>
                     <h3>Segurança e Responsabilidade</h3>
-                    <p>Todos os procedimentos são realizados com rigor técnico e foco na saúde do paciente.</p>
+                    <p>Todos os procedimentos são realizados com rigor técnico e foco na saúde.</p>
                 </div>
                 <div class="diferencial-item">
                     <div class="diferencial-icon"><i data-feather="star"></i></div>
-                    <h3>Reconhecimento Construído ao Longo dos Anos</h3>
-                    <p>Premiações e reconhecimento da comunidade pela qualidade do trabalho e dedicação aos pacientes.</p>
+                    <h3>Reconhecimento ao Longo dos Anos</h3>
+                    <p>Premiações e reconhecimento da comunidade pela qualidade do trabalho.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- ===== FILOSOFIA ===== -->
-    <section class="filosofia">
+    <!-- ===== "O DIFERENCIAL RICARDO" (inspirado no "O Diferencial DB") ===== -->
+    <section class="diferencial-destaque">
         <div class="container">
-            <div class="filosofia-conteudo">
-                <span class="section-tag" style="color:#fff; background: rgba(255,255,255,0.2);">Filosofia de Atendimento</span>
-                <blockquote>
-                    "Cuidar dos pés é cuidar da base do corpo."
-                </blockquote>
+            <div class="diferencial-destaque-conteudo">
+                <span class="section-tag" style="background:rgba(255,255,255,0.15); color:#fff;">O Diferencial Ricardo</span>
+                <h2>Tecnologia e técnica a serviço da <span>saúde dos seus pés</span></h2>
                 <p>
-                    Essa visão orienta cada atendimento realizado. Mais do que resolver um problema pontual, o objetivo é proporcionar conforto, mobilidade, segurança e qualidade de vida por meio de um cuidado especializado e responsável.
+                    Não se trata apenas de tratar um sintoma. Trata-se de compreender a causa, 
+                    investigar a fundo e oferecer uma solução que realmente funcione a longo prazo.
                 </p>
-                <div class="filosofia-citacao">
-                    <p>
-                        "Muitos pacientes chegam ao meu consultório frustrados, após passarem por diversos tratamentos sem sucesso. Meu compromisso é ir além do visual: eu investigo a fundo a raiz da sua dor física ou do problema crônico nas unhas e na pele. Utilizo técnicas avançadas para resolver de forma definitiva o que parecia impossível, devolvendo o seu conforto e o prazer de caminhar sem dor."
-                    </p>
-                    <p class="citacao-autor">— Ricardo Wiltgen</p>
+                <div class="diferencial-destaque-grid">
+                    <div class="diferencial-destaque-item">
+                        <i data-feather="search"></i>
+                        <div>
+                            <h4>Avaliação precisa</h4>
+                            <p>Identificação correta da origem do problema</p>
+                        </div>
+                    </div>
+                    <div class="diferencial-destaque-item">
+                        <i data-feather="tool"></i>
+                        <div>
+                            <h4>Técnicas avançadas</h4>
+                            <p>Procedimentos baseados em evidências e experiência</p>
+                        </div>
+                    </div>
+                    <div class="diferencial-destaque-item">
+                        <i data-feather="heart"></i>
+                        <div>
+                            <h4>Cuidado humanizado</h4>
+                            <p>Atendimento que respeita sua história e suas necessidades</p>
+                        </div>
+                    </div>
+                    <div class="diferencial-destaque-item">
+                        <i data-feather="clock"></i>
+                        <div>
+                            <h4>Soluções duradouras</h4>
+                            <p>Resultados que vão além do alívio imediato</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- ===== FAQ ===== -->
-    <section class="faq">
+
+    <!-- ===== SERVIÇOS EM DESTAQUE ===== -->
+    <section class="servicos-destaque" style="background: var(--cor-off-white);">
         <div class="container">
             <div class="section-header">
-                <span class="section-tag">Dúvidas</span>
-                <h2>Perguntas <span>Frequentes</span></h2>
+                <span class="section-tag">Tratamentos</span>
+                <h2>Áreas de <span>Atuação</span></h2>
+                <p>Conheça os principais serviços oferecidos por Ricardo Wiltgen</p>
             </div>
-            <div class="faq-grid">
-                <div class="faq-item">
-                    <div class="faq-pergunta">Quando devo procurar um podólogo?</div>
-                    <div class="faq-resposta">O ideal é procurar um podólogo sempre que houver desconforto, dor, alterações nas unhas, calosidades recorrentes ou qualquer mudança que afete a saúde dos pés. Quanto mais cedo o problema for avaliado, maiores são as chances de prevenir complicações.</div>
+            <div class="servicos-grid">
+                <!-- Card 1 -->
+                <div class="servico-card">
+                    <div class="servico-icon"><i data-feather="footprints"></i></div>
+                    <h3>Unhas Encravadas</h3>
+                    <p>Avaliação e tratamento especializado de quadros agudos e recorrentes, com técnicas não cirúrgicas.</p>
+                    <a href="/pages/servicos.html#unha-encravada" class="btn-link">Saiba mais →</a>
                 </div>
-                <div class="faq-item">
-                    <div class="faq-pergunta">O que é Podologia Avançada?</div>
-                    <div class="faq-resposta">A Podologia Avançada é uma área especializada voltada para a avaliação, prevenção, correção e tratamento de alterações que afetam os pés e as unhas. Diferentemente de um cuidado apenas estético, envolve conhecimento técnico, experiência clínica e abordagem individualizada para casos simples e complexos.</div>
+                <!-- Card 2 -->
+                <div class="servico-card">
+                    <div class="servico-icon"><i data-feather="droplet"></i></div>
+                    <h3>Pé Diabético</h3>
+                    <p>Acompanhamento preventivo e cuidados especializados para redução de riscos e preservação da saúde dos pés.</p>
+                    <a href="/pages/servicos.html#pe-diabetico" class="btn-link">Saiba mais →</a>
                 </div>
-                <div class="faq-item">
-                    <div class="faq-pergunta">Unha encravada tem solução?</div>
-                    <div class="faq-resposta">Na maioria dos casos, sim. O tratamento adequado depende da avaliação das causas que estão contribuindo para o problema. Quando tratada corretamente, é possível reduzir significativamente as recorrências e melhorar o conforto do paciente.</div>
+                <!-- Card 3 -->
+                <div class="servico-card">
+                    <div class="servico-icon"><i data-feather="ruler"></i></div>
+                    <h3>Correções Ungueais</h3>
+                    <p>Técnicas específicas para auxiliar na correção do crescimento inadequado das unhas, com órteses personalizadas.</p>
+                    <a href="/pages/servicos.html#correcoes-ungueais" class="btn-link">Saiba mais →</a>
                 </div>
-                <div class="faq-item">
-                    <div class="faq-pergunta">Unha encravada sempre precisa de cirurgia?</div>
-                    <div class="faq-resposta">Não. Raramente precisa. Muitos casos podem ser tratados por meio de técnicas podológicas específicas, sem necessidade de procedimentos cirúrgicos. Em muitas situações a cirurgia pode piorar quase que irreversivelmente a situação.</div>
+                <!-- Card 4 -->
+                <div class="servico-card">
+                    <div class="servico-icon"><i data-feather="search"></i></div>
+                    <h3>Alterações Ungueais</h3>
+                    <p>Avaliação e manejo de diferentes alterações que comprometem a saúde e a aparência das unhas.</p>
+                    <a href="/pages/servicos.html#alteracoes-ungueais" class="btn-link">Saiba mais →</a>
                 </div>
-                <div class="faq-item">
-                    <div class="faq-pergunta">Pessoas com diabetes devem consultar um podólogo?</div>
-                    <div class="faq-resposta">Sim. Pessoas com diabetes possuem maior risco de desenvolver alterações nos pés devido às mudanças na circulação e na sensibilidade. O acompanhamento preventivo é fundamental para preservar a saúde dos pés e reduzir riscos de complicações.</div>
+                <!-- Card 5 -->
+                <div class="servico-card">
+                    <div class="servico-icon"><i data-feather="zap"></i></div>
+                    <h3>Calosidades e Hiperqueratoses</h3>
+                    <p>Tratamento focado na redução de desconfortos e prevenção de complicações.</p>
+                    <a href="/pages/servicos.html#calosidades" class="btn-link">Saiba mais →</a>
                 </div>
-                <div class="faq-item">
-                    <div class="faq-pergunta">Como agendar uma avaliação?</div>
-                    <div class="faq-resposta">O agendamento pode ser realizado diretamente pelo WhatsApp. Durante a avaliação inicial, cada caso é analisado individualmente para definir a melhor abordagem.</div>
+                <!-- Card 6 -->
+                <div class="servico-card" style="border-color: var(--cor-primaria);">
+                    <div class="servico-icon"><i data-feather="star"></i></div>
+                    <h3>Casos Complexos</h3>
+                    <p>Situações que exigem avaliação aprofundada, experiência clínica e acompanhamento especializado.</p>
+                    <a href="/pages/servicos.html#casos-complexos" class="btn-link">Saiba mais →</a>
+                </div>
+            </div>
+            <div class="servicos-cta">
+                <a href="/pages/servicos.html" class="btn-primario">Ver todos os serviços</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== DEPOIMENTO ===== -->
+    <section class="depoimento-destaque" style="background: var(--cor-branco); padding: 80px 0;">
+        <div class="container">
+            <div class="depoimento-conteudo">
+                <span class="section-tag" style="background: var(--cor-primaria-clara-2);">Depoimento</span>
+                <div class="depoimento-texto">
+                    <span class="depoimento-aspas">"</span>
+                    <blockquote>
+                        Muitos pacientes chegam ao meu consultório frustrados, após passarem por diversos tratamentos sem sucesso. Meu compromisso é ir além do visual: eu investigo a fundo a raiz da sua dor física ou do problema crônico nas unhas e na pele. Utilizo técnicas avançadas para resolver de forma definitiva o que parecia impossível, devolvendo o seu conforto e o prazer de caminhar sem dor.
+                    </blockquote>
+                    <p class="depoimento-autor">— Ricardo Wiltgen</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- ===== BLOG / ÚLTIMOS ARTIGOS ===== -->
+    <!-- ===== BLOG ===== -->
     <section class="blog-destaque">
         <div class="container">
             <div class="section-header">
@@ -262,11 +244,11 @@
                 <h2>Últimos <span>Artigos</span></h2>
                 <p>Informações e orientações para cuidar da saúde dos seus pés</p>
             </div>
-            <div id="artigos-recentes" class="blog-grid" style="grid-template-columns: repeat(3, 1fr);">
+            <div id="artigos-recentes" class="blog-grid">
                 <p style="grid-column: span 3; text-align:center; color:var(--cor-texto-claro);">Carregando artigos...</p>
             </div>
             <div class="blog-cta">
-                <a href="pages/blog.html" class="btn-secundario">Ver todos os artigos</a>
+                <a href="/pages/blog.html" class="btn-secundario">Ver todos os artigos</a>
             </div>
         </div>
     </section>
@@ -275,31 +257,31 @@
     <section class="cta-final">
         <div class="container cta-container">
             <div class="cta-conteudo">
-                <h2>Agende sua <span>Avaliação</span></h2>
+                <h2>Agende sua <span>avaliação</span></h2>
                 <p>
-                    Se você convive com desconfortos, alterações nas unhas, problemas recorrentes ou busca um atendimento especializado em Podologia Avançada, agende uma avaliação.
+                    Se você convive com desconfortos, alterações nas unhas ou busca um atendimento especializado, agende uma avaliação. Cada caso merece atenção individual e uma abordagem adequada às suas necessidades.
                 </p>
-                <p>
-                    Cada caso merece atenção individual e uma abordagem adequada às suas necessidades.
-                </p>
-                <a href="https://api.whatsapp.com/send?phone=5554999676597&text=" target="_blank" class="btn-primario">
-                    Agendar avaliação pelo WhatsApp
-                </a>
+                <div class="cta-botoes">
+                    <a href="https://api.whatsapp.com/send?phone=5554999676597&text=" target="_blank" class="btn-primario">
+                        Agendar pelo WhatsApp
+                    </a>
+                    <a href="/pages/servicos.html" class="btn-secundario" style="border-color: rgba(255,255,255,0.4); color: #fff;">
+                        Conhecer serviços
+                    </a>
+                </div>
             </div>
         </div>
     </section>
 
     <script>
-        // Carrega os 3 artigos mais recentes para a página inicial
+        // Carrega os 3 artigos mais recentes
         document.addEventListener('DOMContentLoaded', function() {
-            fetch('components/artigos.json')
+            fetch('/components/artigos.json')
                 .then(response => response.json())
                 .then(artigos => {
                     const container = document.getElementById('artigos-recentes');
                     container.innerHTML = '';
-                    
                     const recentes = artigos.slice(0, 3);
-                    
                     recentes.forEach(artigo => {
                         const card = document.createElement('article');
                         card.className = 'blog-card';
@@ -310,7 +292,7 @@
                                 <p>${artigo.resumo}</p>
                                 <div style="display:flex; justify-content:space-between; align-items:center; margin-top:12px;">
                                     <span style="font-size:0.8rem; color:var(--cor-texto-claro);">${artigo.data}</span>
-                                    <a href="pages/artigo.html?id=${artigo.id}" class="btn-link">Leia mais →</a>
+                                    <a href="/pages/artigo.html?id=${artigo.id}" class="btn-link">Leia mais →</a>
                                 </div>
                             </div>
                         `;
@@ -323,6 +305,6 @@
         });
     </script>
 
-    <script src="assets/js/script.js"></script>
+    <script src="/assets/js/script.js"></script>
 </body>
 </html>

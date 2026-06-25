@@ -4,7 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Blog | Ricardo Wiltgen - Podologia</title>
-    <link rel="stylesheet" href="css/estilo.css" />
+    <link rel="icon" type="image/png" href="/assets/imagens/favicon.ico" />
+    <link rel="stylesheet" href="/assets/css/estilo.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet" />
     <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
@@ -52,7 +53,7 @@
     <script>
         // ===== CARREGA OS ARTIGOS DO JSON =====
         document.addEventListener('DOMContentLoaded', function() {
-            fetch('artigos.json')
+            fetch('/components/artigos.json')
                 .then(response => response.json())
                 .then(artigos => {
                     const container = document.getElementById('lista-artigos');
@@ -86,6 +87,6 @@
         });
     </script>
 
-    <script src="js/script.js"></script>
+    <script src="/assets/js/script.js"></script>
 </body>
 </html>

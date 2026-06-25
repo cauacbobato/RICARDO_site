@@ -121,28 +121,62 @@ img { max-width: 100%; display: block; }
 .btn-link:hover { color: var(--cor-secundaria); }
 
 /* ===== HEADER ===== */
+
 header {
     background: var(--cor-branco);
     border-bottom: 1px solid rgba(63, 94, 119, 0.08);
-    padding: 16px 0;
+    padding: 12px 0; /* Reduzi um pouco o padding */
     position: sticky;
     top: 0;
     z-index: 1000;
     backdrop-filter: blur(10px);
+    height: 80px; /* ALTURA FIXA DO HEADER */
+    display: flex;
+    align-items: center; /* Centraliza verticalmente o conteúdo */
 }
+
 .header-container {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    width: 100%;
+    height: 100%; /* Ocupa toda a altura do header */
 }
+
 .logo a {
     display: flex;
     align-items: center;
     gap: 12px;
+    height: 100%; /* Ocupa toda a altura do header */
 }
+
 .logo img {
-    height: 90px;
+    height: 130px; /* AUMENTEI DE 48px PARA 56px - ajuste conforme necessário */
     width: auto;
+    max-height: 200px; /* Garante que não ultrapasse o header */
+    object-fit: contain;
+}
+
+/* Ajuste para telas menores */
+@media (max-width: 768px) {
+    header {
+        height: 70px; /* Altura menor em mobile */
+        padding: 8px 0;
+    }
+    
+    .logo img {
+        height: 44px; /* Logo menor em mobile */
+    }
+}
+
+@media (max-width: 480px) {
+    header {
+        height: 64px;
+    }
+    
+    .logo img {
+        height: 38px;
+    }
 }
 .logo-texto {
     font-size: 1.4rem;
@@ -770,4 +804,296 @@ footer {
     width: 100%;
     height: 200px;
     border: none;
+}
+/* ===== IMAGENS - SOLUÇÃO SEM BORDAS ===== */
+
+/* Contêineres com proporção definida e overflow escondido */
+.hero-imagem,
+.sobre-imagem,
+.podologia-imagem {
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    background: var(--cor-bege); /* fundo só para carregamento, não aparece se a imagem preencher */
+}
+
+.hero-imagem {
+    aspect-ratio: 4/4; /* proporção 16:10, ajustável */
+}
+
+.sobre-imagem {
+    aspect-ratio: 4/3;
+}
+
+.podologia-imagem {
+    aspect-ratio: 1/1;
+}
+
+.blog-card-img {
+    height: 200px;
+    overflow: hidden;
+    background: var(--cor-bege);
+    border-radius: var(--border-radius) var(--border-radius) 0 0;
+}
+
+/* Todas as imagens dentro desses contêineres */
+.hero-imagem img,
+.sobre-imagem img,
+.podologia-imagem img,
+.blog-card-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* preenche sem distorcer */
+    object-position: center center; /* centraliza */
+    display: block; /* remove espaços extras */
+}
+
+/* Ajuste específico para a foto do Ricardo (sobre) se o rosto estiver no topo */
+.sobre-imagem img {
+    object-position: center 25%; /* ajuste se a foto tiver o rosto mais acima */
+}
+
+/* ===== SERVIÇOS EM DESTAQUE (cards lado a lado) ===== */
+.servicos-destaque {
+    padding: 80px 0;
+    background: var(--cor-fundo);
+}
+
+.servicos-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 cards por linha */
+    gap: 30px;
+    margin-bottom: 48px; /* Espaço entre os cards e o botão */
+}
+
+.servico-card {
+    background: var(--cor-branco);
+    padding: 32px 24px;
+    border-radius: var(--border-radius);
+    border: 1px solid rgba(63, 94, 119, 0.06);
+    transition: var(--transition);
+    text-align: center;
+}
+
+.servico-card:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--sombra-hover);
+    border-color: var(--cor-primaria-clara);
+}
+
+.servico-card .servico-icon {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 12px;
+}
+
+.servico-card .servico-icon i {
+    width: 48px;
+    height: 48px;
+    stroke: var(--cor-primaria);
+    stroke-width: 1.8;
+    color: var(--cor-primaria);
+}
+
+.servico-card h3 {
+    font-size: 1.15rem;
+    color: var(--cor-primaria);
+    margin-bottom: 8px;
+}
+
+.servico-card p {
+    color: var(--cor-texto-claro);
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 16px;
+}
+
+.servicos-cta {
+    text-align: center;
+    margin-top: 0; /* Removemos o margin-top para usar o margin-bottom do grid */
+    padding-top: 8px;
+}
+
+/* Espaço entre o botão e a próxima seção */
+.servicos-destaque + .depoimento-destaque {
+    margin-top: 0;
+}
+
+/* ===== RESPONSIVIDADE ===== */
+@media (max-width: 992px) {
+    .servicos-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 24px;
+    }
+}
+
+@media (max-width: 576px) {
+    .servicos-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        margin-bottom: 36px;
+    }
+}
+
+
+/* ===== SOBRE COM DESTAQUES EM LISTA ===== */
+.sobre-destaques {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin: 20px 0 28px;
+}
+
+.sobre-destaque-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.95rem;
+    color: var(--cor-texto);
+}
+
+.sobre-destaque-item i {
+    width: 20px;
+    height: 20px;
+    stroke: var(--cor-primaria);
+    color: var(--cor-primaria);
+    flex-shrink: 0;
+}
+
+/* ===== DIFERENCIAL DESTAQUE (inspirado na DB) ===== */
+.diferencial-destaque {
+    padding: 80px 0;
+    background: var(--cor-primaria);
+    color: var(--cor-branco);
+}
+
+.diferencial-destaque-conteudo {
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.diferencial-destaque-conteudo h2 {
+    font-size: 2.2rem;
+    font-weight: 700;
+    margin-bottom: 16px;
+}
+
+.diferencial-destaque-conteudo h2 span {
+    color: #a8c8e0;
+}
+
+.diferencial-destaque-conteudo > p {
+    font-size: 1.1rem;
+    opacity: 0.85;
+    max-width: 600px;
+    margin: 0 auto 40px;
+}
+
+.diferencial-destaque-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+    text-align: left;
+}
+
+.diferencial-destaque-item {
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+    background: rgba(255,255,255,0.08);
+    padding: 20px 24px;
+    border-radius: var(--border-radius);
+    backdrop-filter: blur(4px);
+    transition: var(--transition);
+}
+
+.diferencial-destaque-item:hover {
+    background: rgba(255,255,255,0.15);
+    transform: translateY(-4px);
+}
+
+.diferencial-destaque-item i {
+    width: 32px;
+    height: 32px;
+    stroke: #fff;
+    color: #fff;
+    flex-shrink: 0;
+    margin-top: 4px;
+}
+
+.diferencial-destaque-item h4 {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 4px;
+}
+
+.diferencial-destaque-item p {
+    font-size: 0.9rem;
+    opacity: 0.8;
+    margin: 0;
+}
+
+/* ===== DEPOIMENTO ===== */
+.depoimento-destaque {
+    padding: 80px 0;
+    background: var(--cor-branco); /* ou a cor que você quiser */
+}
+
+.depoimento-conteudo {
+    max-width: 700px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.depoimento-texto {
+    position: relative;
+    margin-top: 20px;
+}
+
+.depoimento-aspas {
+    font-size: 4rem;
+    font-family: Georgia, serif;
+    color: var(--cor-primaria);
+    opacity: 0.25;
+    display: block;
+    line-height: 1;
+    margin-bottom: -20px;
+}
+
+.depoimento-texto blockquote {
+    font-size: 1.2rem;
+    font-style: italic;
+    line-height: 1.7;
+    color: var(--cor-texto);
+    margin: 0;
+}
+
+.depoimento-autor {
+    font-weight: 600;
+    color: var(--cor-primaria);
+    margin-top: 16px;
+}
+
+/* ===== CTA COM DOIS BOTÕES ===== */
+.cta-botoes {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 8px;
+}
+
+/* ===== RESPONSIVIDADE ===== */
+@media (max-width: 768px) {
+    .diferencial-destaque-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .diferencial-destaque-conteudo h2 {
+        font-size: 1.8rem;
+    }
+    
+    .depoimento-texto blockquote {
+        font-size: 1rem;
+    }
 }

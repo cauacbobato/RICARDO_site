@@ -1634,3 +1634,133 @@ header.rolado {
     .pod-quote blockquote { font-size: 1.25rem; }
     .pod-secao { padding: 52px 0; }
 }
+
+/* =========================================================
+   ===== PÁGINA SOBRE (cards de números + destaques) ======
+   Reaproveita .pod-secao, .pod-quote, .pod-timeline.
+   Componentes adicionais abaixo. Nenhum texto alterado.
+   ========================================================= */
+
+/* ----- Faixa de números/estatísticas ----- */
+.sobre-numeros {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 22px;
+}
+.sobre-num-card {
+    background: var(--cor-branco);
+    border: 1px solid var(--cor-cinza);
+    border-radius: var(--border-radius);
+    padding: 34px 22px;
+    text-align: center;
+    box-shadow: var(--sombra);
+    transition: var(--transition);
+}
+.sobre-num-card:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--sombra-hover);
+    border-color: var(--cor-primaria-clara);
+}
+.sobre-num-card .sobre-num-icon {
+    width: 50px;
+    height: 50px;
+    margin: 0 auto 14px;
+    border-radius: 50%;
+    background: var(--cor-primaria-clara-2);
+    color: var(--cor-primaria);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+.sobre-num-card:hover .sobre-num-icon { transform: scale(1.12); }
+.sobre-num-card .sobre-num-icon i { width: 24px; height: 24px; }
+.sobre-num-card .sobre-num-valor {
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: var(--cor-primaria);
+    line-height: 1.1;
+    margin-bottom: 4px;
+}
+.sobre-num-card .sobre-num-label {
+    font-size: 0.92rem;
+    color: var(--cor-texto-claro);
+    line-height: 1.4;
+}
+
+/* ----- Cards de destaque (qualidades) ----- */
+.sobre-destaques {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 22px;
+}
+.sobre-destaque-card {
+    display: flex;
+    align-items: flex-start;
+    gap: 18px;
+    background: var(--cor-branco);
+    border: 1px solid var(--cor-cinza);
+    border-radius: var(--border-radius);
+    padding: 26px;
+    box-shadow: var(--sombra);
+    transition: var(--transition);
+}
+.sobre-destaque-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--sombra-hover);
+    border-color: var(--cor-primaria-clara);
+}
+.sobre-destaque-card .sobre-destaque-icon {
+    flex-shrink: 0;
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    background: var(--cor-primaria);
+    color: var(--cor-branco);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+.sobre-destaque-card:hover .sobre-destaque-icon { transform: scale(1.08) rotate(-4deg); }
+.sobre-destaque-card .sobre-destaque-icon i { width: 24px; height: 24px; }
+.sobre-destaque-card p {
+    color: var(--cor-texto);
+    font-size: 1rem;
+    line-height: 1.55;
+    margin: 0;
+    align-self: center;
+}
+
+/* ----- Texto de trajetória com blocos e subtítulos ----- */
+.sobre-bloco { margin-bottom: 30px; }
+.sobre-bloco:last-child { margin-bottom: 0; }
+.sobre-bloco .sobre-bloco-titulo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 12px;
+}
+.sobre-bloco .sobre-bloco-titulo .sobre-bloco-icon {
+    flex-shrink: 0;
+    width: 42px;
+    height: 42px;
+    border-radius: 12px;
+    background: var(--cor-primaria-clara-2);
+    color: var(--cor-primaria);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.sobre-bloco .sobre-bloco-titulo .sobre-bloco-icon i { width: 22px; height: 22px; }
+.sobre-bloco .sobre-bloco-titulo h3 { font-size: 1.25rem; color: var(--cor-primaria); }
+.sobre-bloco p { color: var(--cor-texto-claro); line-height: 1.75; }
+.sobre-bloco p strong { color: var(--cor-primaria); font-weight: 600; }
+
+@media (max-width: 768px) {
+    .sobre-numeros { grid-template-columns: repeat(2, 1fr); }
+    .sobre-destaques { grid-template-columns: 1fr; }
+}
+@media (max-width: 420px) {
+    .sobre-numeros { grid-template-columns: 1fr; }
+}

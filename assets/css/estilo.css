@@ -1097,3 +1097,334 @@ footer {
         font-size: 1rem;
     }
 }
+
+/* =========================================================
+   ===== MELHORIAS GRÁFICAS / INTERAÇÕES (v2) ==============
+   Todas as melhorias abaixo são puramente visuais e de
+   interação. Nenhum conteúdo, texto ou imagem foi alterado.
+   ========================================================= */
+
+/* ----- Tipografia refinada ----- */
+body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+}
+h1, h2, h3, h4 {
+    letter-spacing: -0.015em;   /* títulos mais coesos */
+    text-wrap: balance;          /* quebras de linha mais elegantes */
+}
+p { text-wrap: pretty; }
+
+/* Hierarquia um pouco mais arejada nos títulos de seção */
+.section-header h2 { font-size: 2.35rem; line-height: 1.18; }
+.section-header p { line-height: 1.65; }
+
+/* ----- Seleção de texto na cor da marca ----- */
+::selection {
+    background: var(--cor-primaria);
+    color: var(--cor-branco);
+}
+
+/* ----- Scrollbar personalizada ----- */
+@media (min-width: 769px) {
+    * {
+        scrollbar-width: thin;
+        scrollbar-color: var(--cor-primaria-clara) var(--cor-off-white);
+    }
+    ::-webkit-scrollbar { width: 10px; height: 10px; }
+    ::-webkit-scrollbar-track { background: var(--cor-off-white); }
+    ::-webkit-scrollbar-thumb {
+        background: var(--cor-primaria-clara);
+        border-radius: 8px;
+        border: 2px solid var(--cor-off-white);
+    }
+    ::-webkit-scrollbar-thumb:hover { background: var(--cor-primaria); }
+}
+
+/* =========================================================
+   ===== BARRA DE PROGRESSO DE LEITURA =====================
+   ========================================================= */
+.progresso-leitura {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 4px;
+    width: 0%;
+    background: linear-gradient(90deg, var(--cor-primaria), var(--cor-primaria-clara));
+    z-index: 2000;
+    transition: width 0.1s linear;
+    box-shadow: 0 0 8px rgba(63, 94, 119, 0.4);
+}
+
+/* =========================================================
+   ===== BOTÃO "VOLTAR AO TOPO" ============================
+   ========================================================= */
+.btn-topo {
+    position: fixed;
+    bottom: 28px;
+    right: 28px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: var(--cor-primaria);
+    color: var(--cor-branco);
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: var(--sombra-hover);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px) scale(0.8);
+    transition: opacity 0.35s ease, transform 0.35s ease, background 0.3s ease;
+    z-index: 1500;
+}
+.btn-topo.visivel {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0) scale(1);
+}
+.btn-topo:hover {
+    background: var(--cor-secundaria);
+    transform: translateY(-4px) scale(1.05);
+}
+.btn-topo i { width: 22px; height: 22px; }
+@media (max-width: 480px) {
+    .btn-topo { bottom: 20px; right: 20px; width: 44px; height: 44px; }
+}
+
+/* =========================================================
+   ===== SCROLL REVEAL (fade-in ao rolar) ==================
+   ========================================================= */
+.reveal {
+    opacity: 0;
+    transform: translateY(36px);
+    transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1),
+                transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+    will-change: opacity, transform;
+}
+.reveal.visivel {
+    opacity: 1;
+    transform: translateY(0);
+}
+/* Atraso escalonado para grupos de cards */
+.reveal-stagger > * {
+    opacity: 0;
+    transform: translateY(36px);
+    transition: opacity 0.6s cubic-bezier(0.22, 1, 0.36, 1),
+                transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.reveal-stagger.visivel > * {
+    opacity: 1;
+    transform: translateY(0);
+}
+.reveal-stagger.visivel > *:nth-child(1) { transition-delay: 0.05s; }
+.reveal-stagger.visivel > *:nth-child(2) { transition-delay: 0.12s; }
+.reveal-stagger.visivel > *:nth-child(3) { transition-delay: 0.19s; }
+.reveal-stagger.visivel > *:nth-child(4) { transition-delay: 0.26s; }
+.reveal-stagger.visivel > *:nth-child(5) { transition-delay: 0.33s; }
+.reveal-stagger.visivel > *:nth-child(6) { transition-delay: 0.40s; }
+
+/* =========================================================
+   ===== MICRO-INTERAÇÕES E PROFUNDIDADE ===================
+   ========================================================= */
+
+/* Botão primário com brilho deslizante no hover */
+.btn-primario {
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 4px 14px rgba(63, 94, 119, 0.18);
+}
+.btn-primario::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -120%;
+    width: 60%;
+    height: 100%;
+    background: linear-gradient(120deg, transparent, rgba(255, 255, 255, 0.25), transparent);
+    transform: skewX(-20deg);
+    transition: left 0.6s ease;
+}
+.btn-primario:hover::after { left: 130%; }
+
+/* Botão secundário: efeito de preenchimento a partir do centro */
+.btn-secundario { position: relative; overflow: hidden; z-index: 0; }
+
+/* Link com sublinhado animado */
+.btn-link {
+    position: relative;
+    display: inline-block;
+}
+.btn-link::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    width: 0;
+    height: 2px;
+    background: var(--cor-primaria);
+    transition: width 0.3s ease;
+}
+.btn-link:hover::after { width: 100%; }
+
+/* Cards: elevação e profundidade mais suaves e ícones reativos */
+.servico-card,
+.diferencial-item,
+.area-card,
+.blog-card {
+    transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+                box-shadow 0.35s ease,
+                border-color 0.35s ease;
+}
+.servico-card:hover .servico-icon i,
+.diferencial-item:hover .diferencial-icon,
+.area-card:hover .area-icon {
+    transform: scale(1.12);
+    transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+.servico-icon i,
+.diferencial-icon,
+.area-icon {
+    transition: transform 0.35s ease;
+    display: inline-block;
+}
+
+/* Ícones dos diferenciais com fundo circular sutil */
+.diferencial-icon i {
+    stroke: var(--cor-primaria);
+    color: var(--cor-primaria);
+}
+
+/* Imagem do hero/sobre com leve zoom no hover */
+.hero-imagem img,
+.sobre-imagem img,
+.podologia-imagem img {
+    transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.hero-imagem:hover img,
+.sobre-imagem:hover img,
+.podologia-imagem:hover img {
+    transform: scale(1.04);
+}
+
+/* Itens de informação do hero com leve deslocamento no hover */
+.hero-info-item {
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+.hero-info-item:hover {
+    transform: translateX(4px);
+    color: var(--cor-primaria);
+}
+
+/* Links de navegação e rodapé com transição mais suave já existem;
+   reforço de foco acessível para teclado */
+a:focus-visible,
+button:focus-visible {
+    outline: 3px solid var(--cor-primaria-clara);
+    outline-offset: 3px;
+    border-radius: 4px;
+}
+
+/* =========================================================
+   ===== HEADER COM SOMBRA AO ROLAR ========================
+   ========================================================= */
+header {
+    transition: box-shadow 0.3s ease, background 0.3s ease, height 0.3s ease;
+}
+header.rolado {
+    box-shadow: 0 6px 24px rgba(63, 94, 119, 0.12);
+    background: rgba(255, 255, 255, 0.92);
+}
+
+/* =========================================================
+   ===== PARALLAX SUTIL NO HERO ============================
+   ========================================================= */
+.hero-imagem {
+    will-change: transform;
+}
+
+/* =========================================================
+   ===== ENTRADA INICIAL DO HERO (sem depender de scroll) ==
+   ========================================================= */
+.hero-conteudo > * {
+    opacity: 0;
+    transform: translateY(24px);
+    animation: heroFadeUp 0.8s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+.hero-conteudo > *:nth-child(1) { animation-delay: 0.10s; }
+.hero-conteudo > *:nth-child(2) { animation-delay: 0.20s; }
+.hero-conteudo > *:nth-child(3) { animation-delay: 0.30s; }
+.hero-conteudo > *:nth-child(4) { animation-delay: 0.40s; }
+.hero-conteudo > *:nth-child(5) { animation-delay: 0.50s; }
+.hero-imagem {
+    opacity: 0;
+    animation: heroFadeIn 1s cubic-bezier(0.22, 1, 0.36, 1) 0.35s forwards;
+}
+@keyframes heroFadeUp {
+    to { opacity: 1; transform: translateY(0); }
+}
+@keyframes heroFadeIn {
+    to { opacity: 1; }
+}
+
+/* =========================================================
+   ===== INDICADOR DE ROLAGEM NO HERO ======================
+   ========================================================= */
+.scroll-indicador {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    margin: 36px auto 0;
+    color: var(--cor-texto-claro);
+    font-size: 0.75rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    opacity: 0;
+    animation: heroFadeUp 0.8s ease 0.7s forwards;
+}
+.scroll-indicador .scroll-mouse {
+    width: 22px;
+    height: 36px;
+    border: 2px solid var(--cor-primaria-clara);
+    border-radius: 12px;
+    position: relative;
+}
+.scroll-indicador .scroll-mouse::before {
+    content: '';
+    position: absolute;
+    top: 6px;
+    left: 50%;
+    width: 4px;
+    height: 8px;
+    background: var(--cor-primaria);
+    border-radius: 2px;
+    transform: translateX(-50%);
+    animation: scrollMouse 1.6s ease-in-out infinite;
+}
+@keyframes scrollMouse {
+    0% { opacity: 0; transform: translate(-50%, 0); }
+    40% { opacity: 1; }
+    100% { opacity: 0; transform: translate(-50%, 12px); }
+}
+
+/* =========================================================
+   ===== ACESSIBILIDADE: REDUZIR MOVIMENTO =================
+   ========================================================= */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.001ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.001ms !important;
+        scroll-behavior: auto !important;
+    }
+    .reveal,
+    .reveal-stagger > *,
+    .hero-conteudo > *,
+    .hero-imagem { opacity: 1; transform: none; }
+}

@@ -1764,3 +1764,182 @@ header.rolado {
 @media (max-width: 420px) {
     .sobre-numeros { grid-template-columns: 1fr; }
 }
+
+/* =========================================================
+   ===== PÁGINA SERVIÇOS (cards em grid + navegação) ======
+   Reaproveita .pod-secao. Nenhum texto alterado.
+   ========================================================= */
+
+/* ----- Navegação rápida / sumário (chips âncora) ----- */
+.serv-nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+    margin: 8px auto 0;
+    max-width: 900px;
+}
+.serv-nav a {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 18px;
+    background: var(--cor-branco);
+    border: 1px solid var(--cor-cinza);
+    border-radius: 50px;
+    color: var(--cor-primaria);
+    font-size: 0.9rem;
+    font-weight: 500;
+    text-decoration: none;
+    transition: var(--transition);
+}
+.serv-nav a:hover {
+    background: var(--cor-primaria);
+    color: var(--cor-branco);
+    border-color: var(--cor-primaria);
+    transform: translateY(-3px);
+    box-shadow: var(--sombra);
+}
+.serv-nav a i { width: 16px; height: 16px; }
+
+/* ----- Introdução de grupo ----- */
+.serv-grupo-intro {
+    max-width: 720px;
+    margin: 0 auto 40px;
+    text-align: center;
+    color: var(--cor-texto-claro);
+    font-size: 1.05rem;
+    line-height: 1.7;
+}
+
+/* ----- Grid de cards ----- */
+.serv-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 28px;
+}
+
+/* ----- Card de serviço ----- */
+.serv-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    background: var(--cor-branco);
+    border: 1px solid var(--cor-cinza);
+    border-radius: 18px;
+    padding: 36px 32px;
+    box-shadow: var(--sombra);
+    scroll-margin-top: 110px;
+    transition: var(--transition);
+}
+.serv-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--sombra-hover);
+    border-color: var(--cor-primaria-clara);
+}
+
+/* Cabeçalho do card: ícone + badge */
+.serv-card-topo {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+.serv-card-icon {
+    width: 64px;
+    height: 64px;
+    border-radius: 16px;
+    background: var(--cor-primaria-clara-2);
+    color: var(--cor-primaria);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+.serv-card:hover .serv-card-icon { transform: scale(1.1) rotate(-4deg); }
+.serv-card-icon i { width: 32px; height: 32px; }
+.serv-badge {
+    display: inline-block;
+    padding: 5px 14px;
+    border-radius: 50px;
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    background: var(--cor-bege);
+    color: var(--cor-primaria);
+}
+
+.serv-card h3 {
+    font-size: 1.4rem;
+    color: var(--cor-primaria);
+    margin-bottom: 12px;
+    line-height: 1.25;
+}
+.serv-card .serv-desc {
+    color: var(--cor-texto-claro);
+    font-size: 1rem;
+    line-height: 1.65;
+    margin-bottom: 22px;
+}
+
+/* Lista de benefícios em colunas com check */
+.serv-beneficios {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 26px;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 12px;
+}
+.serv-beneficios li {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    color: var(--cor-texto);
+    font-size: 0.95rem;
+    line-height: 1.45;
+}
+.serv-beneficios li i {
+    flex-shrink: 0;
+    width: 18px;
+    height: 18px;
+    color: var(--cor-primaria-clara);
+    margin-top: 2px;
+}
+
+/* Botão sempre alinhado na base do card */
+.serv-card .btn-primario { margin-top: auto; align-self: flex-start; }
+
+/* ----- Card em destaque: Casos Complexos ----- */
+.serv-card--destaque {
+    grid-column: 1 / -1;
+    background: var(--cor-primaria);
+    border-color: var(--cor-primaria);
+    color: var(--cor-branco);
+}
+.serv-card--destaque .serv-card-icon {
+    background: rgba(255, 255, 255, 0.14);
+    color: var(--cor-branco);
+}
+.serv-card--destaque .serv-badge {
+    background: var(--cor-bege);
+    color: var(--cor-primaria);
+}
+.serv-card--destaque h3 { color: var(--cor-branco); }
+.serv-card--destaque .serv-desc { color: rgba(255, 255, 255, 0.85); }
+.serv-card--destaque .serv-beneficios li { color: rgba(255, 255, 255, 0.92); }
+.serv-card--destaque .serv-beneficios li i { color: var(--cor-bege); }
+.serv-card--destaque .btn-primario {
+    background: var(--cor-branco);
+    color: var(--cor-primaria);
+}
+.serv-card--destaque .btn-primario:hover {
+    background: var(--cor-bege);
+    color: var(--cor-primaria);
+}
+
+@media (max-width: 768px) {
+    .serv-grid { grid-template-columns: 1fr; }
+    .serv-card { padding: 28px 24px; }
+}

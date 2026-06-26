@@ -26,23 +26,20 @@
         </div>
     </section>
 
-    <!-- Conteúdo Principal -->
-    <section style="padding: 40px 0 80px; background: var(--cor-branco);">
+    <!-- Bloco 1: Introdução (fundo branco) -->
+    <section class="pod-secao pod-secao--branca">
         <div class="container">
-            <div class="podologia-grid" style="grid-template-columns:1fr 1fr; gap:60px; align-items:center;">
-                <div class="podologia-texto">
-                    <p>
-                        Diferente de um cuidado exclusivamente estético, a Podologia Avançada envolve conhecimento técnico aprofundado, análise clínica e utilização de técnicas específicas para tratar condições que exigem maior experiência profissional.
+            <div class="podologia-grid reveal" style="grid-template-columns:1fr 1fr; gap:60px; align-items:center;">
+                <div class="podologia-texto pod-texto">
+                    <div class="pod-bloco-titulo">
+                        <span class="pod-bloco-icon"><i data-feather="activity"></i></span>
+                        <h3>Uma especialidade clínica, não apenas estética</h3>
+                    </div>
+                    <p class="pod-lead">
+                        Diferente de um cuidado exclusivamente estético, a Podologia Avançada envolve <strong>conhecimento técnico aprofundado</strong>, <strong>análise clínica</strong> e utilização de <strong>técnicas específicas</strong> para tratar condições que exigem maior experiência profissional.
                     </p>
                     <p>
-                        Muitos pacientes procuram atendimento após conviverem durante meses ou anos com desconfortos recorrentes, alterações ungueais ou situações que não obtiveram resolução satisfatória anteriormente. Nesses casos, um olhar especializado faz toda a diferença.
-                    </p>
-                    <h4 style="font-size:1.2rem; color:var(--cor-primaria); margin-top:24px;">Mais do que tratar sintomas: compreender a causa</h4>
-                    <p>
-                        Os pés são a base do corpo e desempenham um papel fundamental na mobilidade, equilíbrio e qualidade de vida. Pequenas alterações podem gerar desconfortos progressivos, modificar a forma de caminhar e impactar a rotina diária.
-                    </p>
-                    <p>
-                        Cada avaliação busca compreender: a origem da queixa, os fatores que contribuem para sua manutenção, possíveis alterações estruturais, riscos de recorrência e estratégias para prevenção e acompanhamento.
+                        Muitos pacientes procuram atendimento após conviverem durante meses ou anos com <strong>desconfortos recorrentes</strong>, alterações ungueais ou situações que não obtiveram resolução satisfatória anteriormente. Nesses casos, um olhar especializado faz toda a diferença.
                     </p>
                 </div>
                 <div class="podologia-imagem">
@@ -50,52 +47,93 @@
                 </div>
             </div>
 
-            <!-- Áreas de Atuação (lista completa) -->
-            <div style="margin-top: 80px;">
-                <div class="section-header">
-                    <span class="section-tag">Atuação</span>
-                    <h2>Áreas de <span>Atuação</span></h2>
+            <!-- Cards de diferenciais (derivados do texto acima) -->
+            <div class="pod-diferenciais reveal-stagger" style="margin-top:56px;">
+                <div class="pod-dif-card">
+                    <div class="pod-dif-icon"><i data-feather="book-open"></i></div>
+                    <h4>Conhecimento técnico aprofundado</h4>
+                    <p>Base teórica e prática que sustenta cada decisão de tratamento.</p>
                 </div>
-                <div class="areas-grid" style="grid-template-columns: repeat(3, 1fr);">
-                    <div class="area-card">
-                        <div class="area-icon"><i data-feather="footprints"></i></div>
-                        <h3>Unhas Encravadas</h3>
-                        <p>Avaliação e tratamento especializado de quadros agudos e recorrentes.</p>
+                <div class="pod-dif-card">
+                    <div class="pod-dif-icon"><i data-feather="search"></i></div>
+                    <h4>Análise clínica</h4>
+                    <p>Avaliação criteriosa para compreender cada caso em profundidade.</p>
+                </div>
+                <div class="pod-dif-card">
+                    <div class="pod-dif-icon"><i data-feather="tool"></i></div>
+                    <h4>Técnicas específicas</h4>
+                    <p>Recursos adequados a condições que exigem maior experiência profissional.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bloco 2: Compreender a causa (fundo claro + citação) -->
+    <section class="pod-secao pod-secao--clara">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-tag">Filosofia de cuidado</span>
+                <h2>Mais do que tratar sintomas: <span>compreender a causa</span></h2>
+            </div>
+            <div class="pod-quote reveal">
+                <blockquote>
+                    Os pés são a base do corpo e desempenham um papel fundamental na mobilidade, equilíbrio e qualidade de vida. Pequenas alterações podem gerar desconfortos progressivos, modificar a forma de caminhar e impactar a rotina diária.
+                </blockquote>
+                <span class="pod-quote-marca"><i data-feather="award"></i> Ricardo Wiltgen — Podologia Avançada</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bloco 3: Linha do tempo da avaliação (fundo branco) -->
+    <section class="pod-secao pod-secao--branca">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-tag">Processo</span>
+                <h2>O que cada <span>avaliação</span> busca compreender</h2>
+            </div>
+            <p class="pod-fluxo-intro reveal">
+                Cada avaliação busca compreender:
+            </p>
+            <div class="pod-timeline reveal-stagger">
+                <div class="pod-step">
+                    <div class="pod-step-num">1</div>
+                    <div class="pod-step-conteudo">
+                        <h4><i data-feather="help-circle"></i> A origem da queixa</h4>
+                        <p>Identificar o ponto de partida do desconforto relatado.</p>
                     </div>
-                    <div class="area-card">
-                        <div class="area-icon"><i data-feather="ruler"></i></div>
-                        <h3>Correções Ungueais</h3>
-                        <p>Técnicas específicas para auxiliar na correção do crescimento inadequado das unhas.</p>
+                </div>
+                <div class="pod-step">
+                    <div class="pod-step-num">2</div>
+                    <div class="pod-step-conteudo">
+                        <h4><i data-feather="repeat"></i> Os fatores que contribuem para sua manutenção</h4>
+                        <p>Entender o que mantém o quadro ativo ao longo do tempo.</p>
                     </div>
-                    <div class="area-card">
-                        <div class="area-icon"><i data-feather="edit-3"></i></div>
-                        <h3>Próteses Ungueais / Órteses</h3>
-                        <p>Reconstrução estética e funcional em casos selecionados.</p>
+                </div>
+                <div class="pod-step">
+                    <div class="pod-step-num">3</div>
+                    <div class="pod-step-conteudo">
+                        <h4><i data-feather="layers"></i> Possíveis alterações estruturais</h4>
+                        <p>Analisar mudanças que afetam a forma e a função dos pés.</p>
                     </div>
-                    <div class="area-card">
-                        <div class="area-icon"><i data-feather="droplet"></i></div>
-                        <h3>Pé Diabético</h3>
-                        <p>Acompanhamento preventivo e cuidados especializados para redução de riscos.</p>
+                </div>
+                <div class="pod-step">
+                    <div class="pod-step-num">4</div>
+                    <div class="pod-step-conteudo">
+                        <h4><i data-feather="alert-triangle"></i> Riscos de recorrência</h4>
+                        <p>Avaliar a probabilidade de o problema retornar.</p>
                     </div>
-                    <div class="area-card">
-                        <div class="area-icon"><i data-feather="search"></i></div>
-                        <h3>Alterações Ungueais</h3>
-                        <p>Avaliação e manejo de diferentes alterações que comprometem a saúde e a aparência das unhas.</p>
-                    </div>
-                    <div class="area-card">
-                        <div class="area-icon"><i data-feather="zap"></i></div>
-                        <h3>Calosidades e Hiperqueratoses</h3>
-                        <p>Tratamento focado na redução de desconfortos e prevenção de complicações.</p>
-                    </div>
-                    <div class="area-card area-destaque" style="grid-column: span 3; max-width:400px; margin:0 auto;">
-                        <div class="area-icon"><i data-feather="star"></i></div>
-                        <h3>Casos Complexos</h3>
-                        <p>Situações que exigem avaliação aprofundada, experiência clínica e acompanhamento especializado.</p>
+                </div>
+                <div class="pod-step">
+                    <div class="pod-step-num">5</div>
+                    <div class="pod-step-conteudo">
+                        <h4><i data-feather="shield"></i> Estratégias para prevenção e acompanhamento</h4>
+                        <p>Definir o plano para manter os resultados a longo prazo.</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
+
 
     <!-- CTA -->
     <section class="cta-final">

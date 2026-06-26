@@ -28,47 +28,138 @@
         </div>
     </section>
 
-    <!-- ===== CONTEÚDO SOBRE ===== -->
-    <section style="padding: 40px 0 80px; background: var(--cor-branco);">
+    <!-- ===== BLOCO 1: TRAJETÓRIA (fundo branco) ===== -->
+    <section class="pod-secao pod-secao--branca">
         <div class="container">
-            <div class="sobre-container" style="grid-template-columns:1fr 1fr; gap:60px;">
+            <div class="sobre-container reveal" style="grid-template-columns:1fr 1fr; gap:60px; align-items:center;">
                 <div class="sobre-imagem">
                     <img src="/assets/imagens/sobre-placeholder.jpg" alt="Ricardo Wiltgen" />
                 </div>
                 <div class="sobre-conteudo">
-                    <h2>Trajetória e experiência</h2>
-                    <p>
-                        Gaúcho, formado pela Universidade de Caxias do Sul (UCS), Ricardo Wiltgen dedica sua trajetória profissional à podologia há mais de duas décadas.
-                    </p>
-                    <p>
-                        Ao longo desses anos, construiu uma carreira baseada em aperfeiçoamento contínuo, experiência clínica e atendimento individualizado, tornando-se referência para pacientes que buscam um cuidado especializado, seguro e resolutivo.
-                    </p>
-                    <p>
-                        Seu trabalho vai além da realização de procedimentos. Cada atendimento é conduzido com atenção aos detalhes, avaliação criteriosa e foco na identificação da causa dos problemas, oferecendo soluções personalizadas para preservar a saúde e a funcionalidade dos pés.
-                    </p>
-                    <ul class="sobre-lista">
-                        <li>✓ Mais de 20 anos de experiência em podologia</li>
-                        <li>✓ Formado pela Universidade de Caxias do Sul (UCS)</li>
-                        <li>✓ Atendimento individualizado e humanizado</li>
-                        <li>✓ Especialista em casos de maior complexidade</li>
-                        <li>✓ Reconhecimento e premiações pela qualidade do trabalho</li>
-                    </ul>
+                    <span class="section-tag">Trajetória e experiência</span>
+
+                    <div class="sobre-bloco">
+                        <div class="sobre-bloco-titulo">
+                            <span class="sobre-bloco-icon"><i data-feather="map-pin"></i></span>
+                            <h3>Raízes gaúchas e formação acadêmica</h3>
+                        </div>
+                        <p>
+                            <strong>Gaúcho</strong>, formado pela <strong>Universidade de Caxias do Sul (UCS)</strong>, Ricardo Wiltgen dedica sua trajetória profissional à podologia há <strong>mais de duas décadas</strong>.
+                        </p>
+                    </div>
+
+                    <div class="sobre-bloco">
+                        <div class="sobre-bloco-titulo">
+                            <span class="sobre-bloco-icon"><i data-feather="trending-up"></i></span>
+                            <h3>Uma carreira de aperfeiçoamento contínuo</h3>
+                        </div>
+                        <p>
+                            Ao longo desses anos, construiu uma carreira baseada em <strong>aperfeiçoamento contínuo</strong>, experiência clínica e atendimento individualizado, tornando-se <strong>referência</strong> para pacientes que buscam um cuidado especializado, seguro e resolutivo.
+                        </p>
+                    </div>
+
+                    <div class="sobre-bloco">
+                        <div class="sobre-bloco-titulo">
+                            <span class="sobre-bloco-icon"><i data-feather="search"></i></span>
+                            <h3>Foco na causa, não apenas no sintoma</h3>
+                        </div>
+                        <p>
+                            Seu trabalho vai além da realização de procedimentos. Cada atendimento é conduzido com <strong>atenção aos detalhes</strong>, avaliação criteriosa e foco na <strong>identificação da causa</strong> dos problemas, oferecendo soluções personalizadas para preservar a saúde e a funcionalidade dos pés.
+                        </p>
+                    </div>
                 </div>
             </div>
+        </div>
+    </section>
 
-            <!-- Filosofia de Atendimento (destaque) -->
-            <div style="margin-top: 60px; background: var(--cor-off-white); padding: 60px 40px; border-radius: var(--border-radius); text-align: center;">
-                <span class="section-tag">Filosofia</span>
-                <h2 style="font-size:2rem; margin-bottom: 16px;">"Cuidar dos pés é cuidar da <span style="color:var(--cor-primaria);">base do corpo</span>."</h2>
-                <p style="max-width:700px; margin:0 auto 20px; color:var(--cor-texto-claro); font-size:1.1rem;">
-                    Essa visão orienta cada atendimento realizado. Mais do que resolver um problema pontual, o objetivo é proporcionar conforto, mobilidade, segurança e qualidade de vida por meio de um cuidado especializado e responsável.
-                </p>
-                <div style="margin-top:32px; padding:24px; background:var(--cor-branco); border-radius:var(--border-radius); border-left:4px solid var(--cor-primaria); text-align:left; font-style:italic;">
-                    <p style="font-size:1.05rem; color:var(--cor-texto);">
-                        "Muitos pacientes chegam ao meu consultório frustrados, após passarem por diversos tratamentos sem sucesso. Meu compromisso é ir além do visual: eu investigo a fundo a raiz da sua dor física ou do problema crônico nas unhas e na pele. Utilizo técnicas avançadas para resolver de forma definitiva o que parecia impossível, devolvendo o seu conforto e o prazer de caminhar sem dor."
-                    </p>
-                    <p style="text-align:right; font-weight:600; font-style:normal; margin-top:8px; color:var(--cor-primaria);">— Ricardo Wiltgen</p>
+    <!-- ===== NÚMEROS / DESTAQUES EM CARDS (fundo claro) ===== -->
+    <section class="pod-secao pod-secao--clara">
+        <div class="container">
+    
+            <div class="section-header reveal">
+                <span class="section-tag">Diferenciais</span>
+                <h2>O que define o <span>atendimento</span></h2>
+            </div>
+            <div class="sobre-destaques reveal-stagger">
+                <div class="sobre-destaque-card">
+                    <span class="sobre-destaque-icon"><i data-feather="clock"></i></span>
+                    <p>Mais de 20 anos de experiência em podologia</p>
                 </div>
+                <div class="sobre-destaque-card">
+                    <span class="sobre-destaque-icon"><i data-feather="book-open"></i></span>
+                    <p>Formado pela Universidade de Caxias do Sul (UCS)</p>
+                </div>
+                <div class="sobre-destaque-card">
+                    <span class="sobre-destaque-icon"><i data-feather="heart"></i></span>
+                    <p>Atendimento individualizado e humanizado</p>
+                </div>
+                <div class="sobre-destaque-card">
+                    <span class="sobre-destaque-icon"><i data-feather="layers"></i></span>
+                    <p>Especialista em casos de maior complexidade</p>
+                </div>
+                <div class="sobre-destaque-card">
+                    <span class="sobre-destaque-icon"><i data-feather="award"></i></span>
+                    <p>Reconhecimento e premiações pela qualidade do trabalho</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== LINHA DO TEMPO / JORNADA (fundo branco) ===== -->
+    <section class="pod-secao pod-secao--branca">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-tag">Jornada</span>
+                <h2>Uma trajetória de <span>especialização</span></h2>
+            </div>
+            <div class="pod-timeline reveal-stagger">
+                <div class="pod-step">
+                    <div class="pod-step-num">1</div>
+                    <div class="pod-step-conteudo">
+                        <h4><i data-feather="book-open"></i> Formação</h4>
+                        <p>Formado pela Universidade de Caxias do Sul (UCS), base acadêmica da sua trajetória.</p>
+                    </div>
+                </div>
+                <div class="pod-step">
+                    <div class="pod-step-num">2</div>
+                    <div class="pod-step-conteudo">
+                        <h4><i data-feather="activity"></i> Experiência clínica</h4>
+                        <p>Mais de duas décadas dedicadas à prática da podologia, com atendimento individualizado.</p>
+                    </div>
+                </div>
+                <div class="pod-step">
+                    <div class="pod-step-num">3</div>
+                    <div class="pod-step-conteudo">
+                        <h4><i data-feather="trending-up"></i> Especialização</h4>
+                        <p>Aperfeiçoamento contínuo voltado a casos de maior complexidade.</p>
+                    </div>
+                </div>
+                <div class="pod-step">
+                    <div class="pod-step-num">4</div>
+                    <div class="pod-step-conteudo">
+                        <h4><i data-feather="star"></i> Referência</h4>
+                        <p>Reconhecimento e premiações pela qualidade de um cuidado seguro e resolutivo.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FILOSOFIA DE ATENDIMENTO (fundo claro) ===== -->
+    <section class="pod-secao pod-secao--clara">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-tag">Filosofia</span>
+                <h2>&ldquo;Cuidar dos pés é cuidar da <span>base do corpo</span>.&rdquo;</h2>
+            </div>
+            <p class="pod-fluxo-intro reveal" style="max-width:760px; margin:0 auto 40px; text-align:center;">
+                Essa visão orienta cada atendimento realizado. Mais do que resolver um problema pontual, o objetivo é proporcionar conforto, mobilidade, segurança e qualidade de vida por meio de um cuidado especializado e responsável.
+            </p>
+            <div class="pod-quote reveal">
+                <blockquote>
+                    Muitos pacientes chegam ao meu consultório frustrados, após passarem por diversos tratamentos sem sucesso. Meu compromisso é ir além do visual: eu investigo a fundo a raiz da sua dor física ou do problema crônico nas unhas e na pele. Utilizo técnicas avançadas para resolver de forma definitiva o que parecia impossível, devolvendo o seu conforto e o prazer de caminhar sem dor.
+                </blockquote>
+                <span class="pod-quote-marca"><i data-feather="award"></i> Ricardo Wiltgen</span>
             </div>
         </div>
     </section>

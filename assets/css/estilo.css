@@ -236,109 +236,177 @@ nav ul li a.ativo {
     transition: var(--transition);
 }
 
-/* ===== HERO ===== */
+/* ===== HERO — PRINCIPAL (index.html) ===== */
+/*
+ * Layout: texto à esquerda dentro do .container,
+ * imagem sangra até a borda direita da viewport.
+ * A seção .hero ocupa 100vw; o grid é: [conteudo | imagem-fullbleed].
+ */
 .hero {
-    padding: 60px 0 80px;
-    background: linear-gradient(135deg, #ffffff 0%, var(--cor-off-white) 50%, #e6d6c7 100%);
     position: relative;
     overflow: hidden;
+    background: #ffffff;
+    /* Gradiente diagonal de fundo: branco puro → off-white quente */
+    background-image: linear-gradient(120deg, #ffffff 0%, #f7f4f0 45%, #ede5db 100%);
+    min-height: 560px;
+    display: flex;
+    align-items: stretch;
 }
 
-/* Formas geométricas decorativas em CSS puro */
+/* Faixa decorativa — linha fina no topo com a cor primária */
 .hero::before {
     content: '';
     position: absolute;
-    top: -80px;
-    right: -80px;
-    width: 400px;
-    height: 400px;
-    border-radius: 50%;
-    background: radial-gradient(circle, rgba(63, 94, 119, 0.06) 0%, transparent 70%);
-    pointer-events: none;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--cor-primaria) 0%, var(--cor-azul-claro) 60%, transparent 100%);
+    z-index: 2;
 }
+
+/* Círculo decorativo grande no canto inferior esquerdo */
 .hero::after {
     content: '';
     position: absolute;
-    bottom: -60px;
-    left: -60px;
-    width: 300px;
-    height: 300px;
+    bottom: -120px;
+    left: -120px;
+    width: 500px;
+    height: 500px;
     border-radius: 50%;
-    background: radial-gradient(circle, rgba(230, 214, 199, 0.5) 0%, transparent 70%);
+    background: radial-gradient(circle, rgba(63, 94, 119, 0.055) 0%, transparent 65%);
     pointer-events: none;
+    z-index: 0;
 }
 
-/* Elemento decorativo extra — linha ondulada sutil no topo */
-.hero .hero-container {
+/* Grid do hero: conteúdo (esquerda) + imagem fullbleed (direita) */
+.hero-container {
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: stretch;
     position: relative;
     z-index: 1;
 }
 
-.hero-container {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 60px;
-    align-items: center;
+/* Conteúdo textual — padding generoso, alinhado à direita do container */
+.hero-conteudo {
+    padding: 72px 56px 72px 48px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
+
+/* Badge pill */
 .hero-badge {
     display: inline-flex;
     align-items: center;
     gap: 6px;
-    background: rgba(63, 94, 119, 0.08);
+    background: rgba(63, 94, 119, 0.09);
     color: var(--cor-primaria);
-    font-size: 0.7rem;
+    font-size: 0.68rem;
     font-weight: 700;
-    letter-spacing: 0.1em;
+    letter-spacing: 0.12em;
     text-transform: uppercase;
-    padding: 7px 18px;
+    padding: 6px 16px;
     border-radius: 20px;
-    margin-bottom: 20px;
-    border: 1px solid rgba(63, 94, 119, 0.15);
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
+    margin-bottom: 22px;
+    border: 1px solid rgba(63, 94, 119, 0.18);
+    width: fit-content;
 }
+
+/* Título do hero */
+.hero-conteudo h1 {
+    font-size: 2.75rem;
+    font-weight: 700;
+    line-height: 1.15;
+    margin-bottom: 18px;
+    color: var(--cor-texto);
+}
+.hero-conteudo h1 span { color: var(--cor-primaria); }
+
+/* Descrição */
+.hero-descricao {
+    font-size: 1.05rem;
+    color: var(--cor-texto-claro);
+    margin-bottom: 28px;
+    line-height: 1.65;
+    max-width: 520px;
+}
+
+/* Info items (endereço, tel, horário) */
 .hero-info {
     display: flex;
     flex-direction: column;
     gap: 8px;
-    margin-bottom: 28px;
+    margin-bottom: 32px;
 }
 .hero-info-item {
     display: flex;
     align-items: center;
     gap: 10px;
-    font-size: 0.95rem;
+    font-size: 0.9rem;
     color: var(--cor-texto-claro);
 }
-.hero-info-icon { font-size: 1.2rem; }
+.hero-info-item svg {
+    width: 16px;
+    height: 16px;
+    color: var(--cor-primaria);
+    flex-shrink: 0;
+}
+
+/* Botões */
 .hero-botoes {
     display: flex;
-    gap: 16px;
+    gap: 14px;
     flex-wrap: wrap;
 }
+
+/* ===== IMAGEM DO HERO — fullbleed à direita ===== */
 .hero-imagem {
-    background: var(--cor-bege);
-    border-radius: var(--border-radius);
-    overflow: hidden;
-    aspect-ratio: 4/3;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0 20px 60px rgba(63, 94, 119, 0.18), 0 4px 16px rgba(63, 94, 119, 0.08);
     position: relative;
+    overflow: hidden;
+    /* Sem border-radius — sangra até a borda */
+    border-radius: 0;
+    background: var(--cor-bege);
 }
 .hero-imagem img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    display: block;
 }
-/* Overlay de gradiente suave sobre a imagem do hero */
+/*
+ * Gradiente sobre a imagem: fade da esquerda (branco/off-white) → transparente.
+ * Cria a fusão suave entre o conteúdo e a foto, exatamente como nas referências.
+ */
+.hero-imagem::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        to right,
+        #ffffff 0%,
+        rgba(247, 244, 240, 0.85) 15%,
+        rgba(247, 244, 240, 0.3) 35%,
+        transparent 60%
+    );
+    z-index: 1;
+    pointer-events: none;
+}
+/* Overlay azul muito suave no canto superior direito */
 .hero-imagem::after {
     content: '';
     position: absolute;
     inset: 0;
-    background: linear-gradient(135deg, rgba(63, 94, 119, 0.12) 0%, rgba(63, 94, 119, 0.02) 60%, transparent 100%);
-    border-radius: var(--border-radius);
+    background: linear-gradient(
+        210deg,
+        rgba(63, 94, 119, 0.08) 0%,
+        transparent 50%
+    );
+    z-index: 1;
     pointer-events: none;
 }
 
@@ -785,13 +853,6 @@ footer {
     }
     .header-cta { display: none; }
 
-    .hero-container {
-        grid-template-columns: 1fr;
-        gap: 40px;
-    }
-    .hero-conteudo h1 { font-size: 2rem; }
-    .hero-imagem { aspect-ratio: 16/10; }
-
     .sobre-container {
         grid-template-columns: 1fr;
     }
@@ -841,20 +902,15 @@ footer {
     height: 200px;
     border: none;
 }
-/* ===== IMAGENS - SOLUÇÃO SEM BORDAS ===== */
+/* ===== IMAGENS — CONTÊINERES COM OVERFLOW ===== */
 
-/* Contêineres com proporção definida e overflow escondido */
-.hero-imagem,
+/* sobre e podologia mantêm border-radius */
 .sobre-imagem,
 .podologia-imagem {
     border-radius: var(--border-radius);
     overflow: hidden;
-    background: var(--cor-bege); /* fundo só para carregamento, não aparece se a imagem preencher */
-    position: relative; /* necessário para o overlay ::after */
-}
-
-.hero-imagem {
-    aspect-ratio: 4/4; /* proporção 16:10, ajustável */
+    background: var(--cor-bege);
+    position: relative;
 }
 
 .sobre-imagem {
@@ -873,20 +929,19 @@ footer {
 }
 
 /* Todas as imagens dentro desses contêineres */
-.hero-imagem img,
 .sobre-imagem img,
 .podologia-imagem img,
 .blog-card-img img {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* preenche sem distorcer */
-    object-position: center center; /* centraliza */
-    display: block; /* remove espaços extras */
+    object-fit: cover;
+    object-position: center center;
+    display: block;
 }
 
 /* Ajuste específico para a foto do Ricardo (sobre) se o rosto estiver no topo */
 .sobre-imagem img {
-    object-position: center 25%; /* ajuste se a foto tiver o rosto mais acima */
+    object-position: center 25%;
 }
 
 /* ===== SERVIÇOS EM DESTAQUE (cards lado a lado) ===== */
@@ -1133,49 +1188,6 @@ footer {
     .depoimento-texto blockquote {
         font-size: 1rem;
     }
-}
-
-/* =========================================================
-   ===== HERO INTERNO (páginas de subconteúdo) =============
-   Aplicado nas páginas que usam hero com 1 coluna e
-   text-align:center. Gradiente mais rico e detalhes visuais.
-   ========================================================= */
-
-/* Hero com 1 coluna centralizado — variante das páginas internas */
-.hero:has(.hero-container[style*="grid-template-columns:1fr"]),
-.hero:has(.hero-container[style*="grid-template-columns: 1fr"]) {
-    background: linear-gradient(160deg, #ffffff 0%, var(--cor-off-white) 45%, rgba(230, 214, 199, 0.6) 100%);
-    padding-bottom: 56px;
-}
-
-/* Linha decorativa azul abaixo do h1 nos heroes internos */
-.hero-container[style*="grid-template-columns:1fr"] .hero-conteudo h1::after,
-.hero-container[style*="grid-template-columns: 1fr"] .hero-conteudo h1::after {
-    content: '';
-    display: block;
-    width: 56px;
-    height: 3px;
-    background: linear-gradient(90deg, var(--cor-primaria), var(--cor-primaria-clara));
-    border-radius: 2px;
-    margin: 16px auto 0;
-}
-
-/* Sombra de texto sutil no h1 do hero para contraste sobre gradiente */
-.hero-conteudo h1 {
-    font-size: 2.8rem;
-    font-weight: 700;
-    line-height: 1.15;
-    margin-bottom: 16px;
-    text-shadow: 0 1px 3px rgba(63, 94, 119, 0.08);
-}
-.hero-conteudo h1 span { color: var(--cor-primaria); }
-
-/* Destaque na descrição do hero */
-.hero-descricao {
-    font-size: 1.1rem;
-    color: var(--cor-texto-claro);
-    margin-bottom: 24px;
-    line-height: 1.65;
 }
 
 /* =========================================================
@@ -2025,56 +2037,139 @@ header.rolado {
 }
 
 /* =========================================================
-   ===== HERO — PADRÃO DECORATIVO E REFINAMENTOS FINAIS ====
+   ===== HERO INTERNO — variante páginas internas ==========
+   Nas páginas internas o hero usa grid-template-columns:1fr
+   e text-align:center via style inline. O visual é um
+   degradê diagonal rico sem imagem, com elementos decorativos.
    ========================================================= */
 
-/* Padrão de pontos sutis no fundo do hero via CSS puro */
-.hero {
+.hero--interno {
+    min-height: auto;
+    padding: 64px 0 72px;
+    background: #ffffff;
     background-image:
-        linear-gradient(135deg, #ffffff 0%, var(--cor-off-white) 50%, #e6d6c7 100%),
-        radial-gradient(circle, rgba(63, 94, 119, 0.07) 1px, transparent 1px);
-    background-size: 100% 100%, 28px 28px;
-    background-blend-mode: normal;
+        linear-gradient(135deg, #ffffff 0%, #f2ede7 40%, #e8ddd3 100%);
+    display: block;
 }
 
-/* Borda superior de destaque — gradiente azul suave */
-.hero {
-    border-top: 3px solid transparent;
-    background-clip: padding-box;
-    box-shadow: inset 0 3px 0 0 var(--cor-primaria-clara-2);
+/* Remove os pseudo-elementos circulares usados no hero principal */
+.hero--interno::after { display: none; }
+
+/* Faixa superior colorida (mantém) */
+.hero--interno::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--cor-primaria) 0%, var(--cor-azul-claro) 60%, transparent 100%);
+    z-index: 2;
 }
 
-/* Melhora o espaçamento do h1 nas páginas internas (col 1) */
-.hero-container[style*="text-align:center"] .hero-conteudo h1,
-.hero-container[style*="text-align: center"] .hero-conteudo h1 {
+.hero--interno .hero-container {
+    max-width: 860px;
+    margin: 0 auto;
+    display: block;
+    text-align: center;
+    padding: 0 24px;
+}
+
+.hero--interno .hero-conteudo {
+    padding: 0;
+    align-items: center;
+}
+
+.hero--interno .hero-conteudo h1 {
     font-size: 3rem;
 }
 
-/* Badge glassmorphism também para a variante de fundo claro */
-.hero-badge {
-    box-shadow: 0 2px 12px rgba(63, 94, 119, 0.1);
+/* Linha decorativa abaixo do h1 */
+.hero--interno .hero-conteudo h1::after {
+    content: '';
+    display: block;
+    width: 52px;
+    height: 3px;
+    background: linear-gradient(90deg, var(--cor-primaria), var(--cor-azul-claro));
+    border-radius: 2px;
+    margin: 16px auto 0;
 }
 
-/* Responsividade do hero */
+.hero--interno .hero-descricao {
+    margin: 0 auto 0;
+    max-width: 640px;
+    text-align: center;
+    font-size: 1.1rem;
+}
+
+/* Decoração lateral — dois círculos posicionados nas bordas */
+.hero--interno .hero-deco {
+    position: absolute;
+    border-radius: 50%;
+    pointer-events: none;
+}
+.hero--interno .hero-deco--esq {
+    width: 280px;
+    height: 280px;
+    left: -100px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: radial-gradient(circle, rgba(63, 94, 119, 0.07) 0%, transparent 70%);
+}
+.hero--interno .hero-deco--dir {
+    width: 220px;
+    height: 220px;
+    right: -80px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: radial-gradient(circle, rgba(230, 214, 199, 0.55) 0%, transparent 70%);
+}
+
+/* =========================================================
+   ===== HERO — RESPONSIVO ================================
+   ========================================================= */
+
+@media (max-width: 1024px) {
+    .hero-container {
+        grid-template-columns: 1fr 1fr;
+    }
+    .hero-conteudo {
+        padding: 56px 40px 56px 36px;
+    }
+    .hero-conteudo h1 {
+        font-size: 2.3rem;
+    }
+}
+
 @media (max-width: 768px) {
     .hero {
-        padding: 48px 0 60px;
-        background-size: 100% 100%, 22px 22px;
+        min-height: auto;
     }
-    .hero-container[style*="text-align:center"] .hero-conteudo h1,
-    .hero-container[style*="text-align: center"] .hero-conteudo h1 {
-        font-size: 2.2rem;
+    .hero-container {
+        grid-template-columns: 1fr;
     }
-    .hero::before {
-        width: 220px;
-        height: 220px;
-        top: -40px;
-        right: -40px;
+    /* Em mobile: conteúdo acima, imagem abaixo */
+    .hero-conteudo {
+        padding: 52px 24px 36px;
+        order: 1;
     }
-    .hero::after {
-        width: 180px;
-        height: 180px;
-        bottom: -30px;
-        left: -30px;
+    .hero-imagem {
+        order: 2;
+        aspect-ratio: 16/9;
+        /* Volta o border-radius em mobile para parecer card */
+        border-radius: var(--border-radius);
+        margin: 0 16px 40px;
     }
+    /* Gradiente de fade em mobile agora de cima para baixo */
+    .hero-imagem::before {
+        background: linear-gradient(
+            to bottom,
+            rgba(255,255,255,0.6) 0%,
+            transparent 40%
+        );
+    }
+    .hero-conteudo h1 { font-size: 2rem; }
+    .hero--interno .hero-conteudo h1 { font-size: 2rem; }
+    .hero--interno { padding: 48px 0 56px; }
+    .hero--interno .hero-deco { display: none; }
 }

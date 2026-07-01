@@ -379,8 +379,8 @@ nav ul li a.ativo {
     display: block;
 }
 /*
- * Gradiente sobre a imagem: fade da esquerda (branco/off-white) → transparente.
- * Cria a fusão suave entre o conteúdo e a foto, exatamente como nas referências.
+ * Gradiente de fusão: branco sólido à esquerda → totalmente transparente.
+ * Ocupa 55% da largura para uma transição bem suave, sem borda marcada.
  */
 .hero-imagem::before {
     content: '';
@@ -389,22 +389,24 @@ nav ul li a.ativo {
     background: linear-gradient(
         to right,
         #ffffff 0%,
-        rgba(247, 244, 240, 0.85) 15%,
-        rgba(247, 244, 240, 0.3) 35%,
-        transparent 60%
+        rgba(255, 255, 255, 0.97) 8%,
+        rgba(247, 244, 240, 0.80) 25%,
+        rgba(247, 244, 240, 0.40) 42%,
+        rgba(247, 244, 240, 0.10) 55%,
+        transparent 70%
     );
     z-index: 1;
     pointer-events: none;
 }
-/* Overlay azul muito suave no canto superior direito */
+/* Overlay escuro suave no topo para legibilidade */
 .hero-imagem::after {
     content: '';
     position: absolute;
     inset: 0;
     background: linear-gradient(
-        210deg,
-        rgba(63, 94, 119, 0.08) 0%,
-        transparent 50%
+        to bottom,
+        rgba(30, 40, 55, 0.18) 0%,
+        transparent 35%
     );
     z-index: 1;
     pointer-events: none;
@@ -2037,92 +2039,35 @@ header.rolado {
 }
 
 /* =========================================================
-   ===== HERO INTERNO — variante páginas internas ==========
-   Nas páginas internas o hero usa grid-template-columns:1fr
-   e text-align:center via style inline. O visual é um
-   degradê diagonal rico sem imagem, com elementos decorativos.
+   ===== HERO INTERNO — layout split com imagem ============
+   Mesmo padrão do hero principal: conteúdo à esquerda,
+   imagem hero-podologia.jpg sangrada à direita.
+   Versão mais compacta (min-height menor).
    ========================================================= */
 
 .hero--interno {
-    min-height: auto;
-    padding: 64px 0 72px;
-    background: #ffffff;
-    background-image:
-        linear-gradient(135deg, #ffffff 0%, #f2ede7 40%, #e8ddd3 100%);
-    display: block;
+    min-height: 420px;
+    /* Herda display:flex e background do .hero */
 }
 
-/* Remove os pseudo-elementos circulares usados no hero principal */
-.hero--interno::after { display: none; }
-
-/* Faixa superior colorida (mantém) */
-.hero--interno::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 3px;
-    background: linear-gradient(90deg, var(--cor-primaria) 0%, var(--cor-azul-claro) 60%, transparent 100%);
-    z-index: 2;
-}
-
-.hero--interno .hero-container {
-    max-width: 860px;
-    margin: 0 auto;
-    display: block;
-    text-align: center;
-    padding: 0 24px;
-}
-
+/* Container interno mais curto verticalmente */
 .hero--interno .hero-conteudo {
-    padding: 0;
-    align-items: center;
+    padding: 56px 48px 56px 48px;
 }
 
 .hero--interno .hero-conteudo h1 {
-    font-size: 3rem;
+    font-size: 2.6rem;
 }
 
 /* Linha decorativa abaixo do h1 */
 .hero--interno .hero-conteudo h1::after {
     content: '';
     display: block;
-    width: 52px;
+    width: 48px;
     height: 3px;
     background: linear-gradient(90deg, var(--cor-primaria), var(--cor-azul-claro));
     border-radius: 2px;
-    margin: 16px auto 0;
-}
-
-.hero--interno .hero-descricao {
-    margin: 0 auto 0;
-    max-width: 640px;
-    text-align: center;
-    font-size: 1.1rem;
-}
-
-/* Decoração lateral — dois círculos posicionados nas bordas */
-.hero--interno .hero-deco {
-    position: absolute;
-    border-radius: 50%;
-    pointer-events: none;
-}
-.hero--interno .hero-deco--esq {
-    width: 280px;
-    height: 280px;
-    left: -100px;
-    top: 50%;
-    transform: translateY(-50%);
-    background: radial-gradient(circle, rgba(63, 94, 119, 0.07) 0%, transparent 70%);
-}
-.hero--interno .hero-deco--dir {
-    width: 220px;
-    height: 220px;
-    right: -80px;
-    top: 50%;
-    transform: translateY(-50%);
-    background: radial-gradient(circle, rgba(230, 214, 199, 0.55) 0%, transparent 70%);
+    margin: 14px 0 0;
 }
 
 /* =========================================================
@@ -2130,14 +2075,14 @@ header.rolado {
    ========================================================= */
 
 @media (max-width: 1024px) {
-    .hero-container {
-        grid-template-columns: 1fr 1fr;
-    }
     .hero-conteudo {
         padding: 56px 40px 56px 36px;
     }
     .hero-conteudo h1 {
         font-size: 2.3rem;
+    }
+    .hero--interno .hero-conteudo h1 {
+        font-size: 2.1rem;
     }
 }
 
@@ -2150,26 +2095,24 @@ header.rolado {
     }
     /* Em mobile: conteúdo acima, imagem abaixo */
     .hero-conteudo {
-        padding: 52px 24px 36px;
+        padding: 48px 24px 32px;
         order: 1;
     }
     .hero-imagem {
         order: 2;
         aspect-ratio: 16/9;
-        /* Volta o border-radius em mobile para parecer card */
         border-radius: var(--border-radius);
         margin: 0 16px 40px;
     }
-    /* Gradiente de fade em mobile agora de cima para baixo */
+    /* Gradiente de fade em mobile de cima para baixo */
     .hero-imagem::before {
         background: linear-gradient(
             to bottom,
-            rgba(255,255,255,0.6) 0%,
-            transparent 40%
+            rgba(255, 255, 255, 0.7) 0%,
+            transparent 45%
         );
     }
     .hero-conteudo h1 { font-size: 2rem; }
-    .hero--interno .hero-conteudo h1 { font-size: 2rem; }
-    .hero--interno { padding: 48px 0 56px; }
-    .hero--interno .hero-deco { display: none; }
+    .hero--interno { min-height: auto; }
+    .hero--interno .hero-conteudo h1 { font-size: 1.85rem; }
 }
